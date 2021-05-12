@@ -3,10 +3,8 @@
 }
 
 .App-logo {
-  height: 20vmin;
+  height: 40vmin;
   pointer-events: none;
-  border: solid 1px orange;
-  border-radius: 300px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
