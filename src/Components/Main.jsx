@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "./Image"
+import imageLinksData from "./Data/image-links.json";
 
 const Main = (props) => {
     return(
@@ -7,11 +7,15 @@ const Main = (props) => {
           <div className="scene" id="welcome">
             <article className="content">
               <div className="gallery">
-                <Image src="https://landonhotel.com/images/hotel/intro_room.jpg" alt="Intro Gallery Room Sample Pictures" />
-                <Image src="https://landonhotel.com/images/hotel/intro_pool.jpg" alt="Intro Gallery Pool Sample Pictures" />
-                <Image src="https://landonhotel.com/images/hotel/intro_dining.jpg" alt="Intro Gallery Dining Sample Pictures" />
-                <Image src="https://landonhotel.com/images/hotel/intro_attractions.jpg" alt="Intro Gallery Attractions Sample Pictures" />
-                <Image className="hidesm" src="https://landonhotel.com/images/hotel/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures" />
+
+              {imageLinksData.map(
+                (link) => {
+                  return (
+                    <img className= {link.class} src={link.src} alt={"intro gallery " + link.alt + " sample pictures"} />
+                  );
+                }
+              )}
+                
               </div>
               <h1>Welcome to the Landon&nbsp;Hotel</h1>
               <p>The original Landon perseveres after 50 years in the heart of West London. The West End neighborhood has something for everyone—from theater to dining to historic sights. And the not-to-miss Rooftop Cafe is a great place for travelers and locals to engage over drinks, food, and good&nbsp;conversation. &nbsp;To learn more about the Landon Hotel in the West End, browse our website and <a href="files/landon_information_sheet_London.pdf">download our handy information sheet</a>.</p>

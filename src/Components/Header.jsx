@@ -1,4 +1,5 @@
 import React from "react"
+import menuLinksData from "./Data/menu-link.json"
 
 const Header = () => {
     return (
@@ -15,11 +16,12 @@ const Header = () => {
             <div className="navbar">
               <div className="brand"><a href="#welcome">Landon <span>Hotel</span></a></div>
               <ul>
-                <li><a className="icon info" href="#hotelinfo"><span>info</span></a></li>
-                <li><a className="icon rooms" href="#rooms"><span>rooms</span></a></li>
-                <li><a className="icon dining" href="#dining"><span>dining</span></a></li>
-                <li><a className="icon events" href="#events"><span>events</span></a></li>
-                <li><a className="icon attractions" href="#attractions"><span>attractions</span></a></li>
+                {menuLinksData.map(item => {
+                  return (
+                    <li><a className={ "icon" + item.class} href={item.href} ><span>{item.text}</span></a></li>
+                    );
+                })}
+               
               </ul>
             </div>
           </nav>
